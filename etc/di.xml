@@ -1,8 +1,16 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Quote\Model\Quote\Address\CustomAttributeListInterface">
-        <plugin name="YireoTraining_ExampleShippingAddressField::addCustomAttributeExample2"
-                type="YireoTraining\ExampleShippingAddressField\Plugin\AddCustomAttribute"/>
+    <type name="Magento\Quote\Api\Data\AddressInterface">
+        <plugin name="YireoTraining_ExampleShippingAddressField::addExampleFieldToQuoteAddress" type="YireoTraining\ExampleShippingAddressField\Plugin\AddExampleFieldToQuoteAddress"/>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="YireoTraining_ExampleShippingAddressField::view" xsi:type="object">YireoTraining\ExampleShippingAddressField\Console\Command\ViewExampleFieldCommand</item>
+                <item name="YireoTraining_ExampleShippingAddressField::edit" xsi:type="object">YireoTraining\ExampleShippingAddressField\Console\Command\EditExampleFieldCommand</item>
+            </argument>
+        </arguments>
     </type>
 </config>

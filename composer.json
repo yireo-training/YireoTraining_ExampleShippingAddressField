@@ -1,20 +1,21 @@
 {
-  "name": "yireo-training/module-example-shipping-address-field",
-  "version": "1.0.0",
-  "description": "N/A",
-  "type": "magento2-module",
-  "require": {
-    "magento/framework": "*"
-  },
-  "license": [
-    "Proprietary"
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "yireo-training/module-example-shipping-address-field",
+    "version": "1.0.0",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "pragmatic-modules/jslayout-parser": "^1.0",
+        "magento/framework": "*"
+    },
+    "license": [
+        "Proprietary"
     ],
-    "psr-4": {
-      "YireoTraining\\ExampleShippingAddressField\\": ""
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "YireoTraining\\ExampleShippingAddressField\\": ""
+        }
     }
-  }
 }

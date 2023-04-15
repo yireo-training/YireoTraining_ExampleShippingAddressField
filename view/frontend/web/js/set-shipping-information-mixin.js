@@ -13,14 +13,17 @@ define([
                 shippingAddress['extension_attributes'] = {};
             }
 
-            console.log('Current shipping address', shippingAddress);
             var attribute = shippingAddress.customAttributes.find(
                 function (element) {
                     return element.attribute_code === 'example2';
                 }
             );
 
-            shippingAddress['extension_attributes']['example2'] = attribute.value;
+            if (attribute) {
+                shippingAddress['extension_attributes']['example2'] = attribute.value;
+            } else {
+                console.warning('Unable to find custom attribute "example2" in shipping address', shippingAddress);
+            }
 
             return originalAction();
         });

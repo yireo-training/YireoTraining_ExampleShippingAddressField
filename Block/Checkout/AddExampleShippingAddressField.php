@@ -31,7 +31,6 @@ class AddExampleShippingAddressField implements LayoutProcessorInterface
                     'label' => 'Example component',
                     'provider' => 'checkoutProvider',
                     'customScope' => 'shippingAddress.custom_attributes',
-                    'customEntry' => null,
                     'dataScope' => 'shippingAddress.custom_attributes.example2',
                 ]
             ]);

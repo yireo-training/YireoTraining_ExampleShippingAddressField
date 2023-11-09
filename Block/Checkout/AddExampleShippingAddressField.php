@@ -3,21 +3,21 @@
 namespace YireoTraining\ExampleShippingAddressField\Block\Checkout;
 
 use Magento\Checkout\Block\Checkout\LayoutProcessorInterface;
-use Pragmatic\JsLayoutParser\Api\ComponentInterface;
-use Pragmatic\JsLayoutParser\Api\ComponentInterfaceFactory;
+use Pragmatic\JsLayoutParser\Model\Component;
+use Pragmatic\JsLayoutParser\Model\ComponentFactory;
 use Pragmatic\JsLayoutParser\Model\JsLayoutParser;
 
 class AddExampleShippingAddressField implements LayoutProcessorInterface
 {
     public function __construct(
         private JsLayoutParser $jsLayoutParser,
-        private ComponentInterfaceFactory $componentFactory
+        private ComponentFactory $componentFactory
     ) {
     }
 
     public function process($jsLayout)
     {
-        /** @var ComponentInterface $component */
+        /** @var Component $component */
         $component = $this->jsLayoutParser->parse($jsLayout, 'checkout');
 
         if ($shippingAddress = $component->getNestedChild('steps.shipping-step.shippingAddress.shipping-address-fieldset')) {
